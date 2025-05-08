@@ -1,0 +1,42 @@
+# LangChain 核心依赖
+langchain==0.3.0  # 明确指定版本[1,6](@ref)
+langchain-community>=0.0.1  # 社区集成包[5](@ref)
+langchain-openai>=0.0.1  # OpenAI 专用接口[1](@ref)
+langchain-huggingface>=0.0.1  # HuggingFace 集成[5](@ref)
+langchain-ollama>=0.0.1  # Ollama 本地模型支持[5](@ref)
+langchain-text-splitters>=0.0.1  # 文本分割工具[5](@ref)
+pydantic>=2.0.0  # 需兼容 Pydantic 2[5](@ref)
+gradio>=3.0.0  # Web 界面库
+
+# 本地 LLM（通过 Ollama）
+ollama>=0.1.0  # 本地模型服务[3](@ref)
+
+# 中文 Embedding 模型支持
+sentence-transformers>=2.2.0  # 中文嵌入模型[3](@ref)
+transformers>=4.30.0  # HuggingFace 模型库[3](@ref)
+torch>=2.0.0  # PyTorch 深度学习框架[3](@ref)
+
+# 向量数据库 FAISS
+faiss-cpu>=1.7.0  # 轻量级向量数据库[3](@ref)
+
+# 文本加载与分割
+unstructured>=0.10.0  # 文档解析[3](@ref)
+tiktoken>=0.4.0  # OpenAI 分词器[1](@ref)
+
+# 文档加载（TXT / 可扩展到 PDF）
+langchainhub>=0.1.0  # 预置提示模板库[5](@ref)
+
+# Web 界面
+gradio>=3.0.0  # 重复声明以确保版本
+
+# 用于读取文本文件
+chardet>=5.0.0  # 编码检测[3](@ref)
+
+# 加载 PDF 文档
+PyMuPDF>=1.23.0  # 或 pdfminer.six>=2022.1.0[3](@ref)
+
+# 加载 Word 文档
+python-docx>=0.8.0  # DOCX 解析[3](@ref)
+
+# 加载 Markdown
+markdown>=3.4.0  # Markdown 处理[3](@ref)
