@@ -1,5 +1,5 @@
 # LangChain 核心依赖
-langchain==0.3.0  # 明确指定版本[1,6](@ref)
+langchain==0.3.25  # 明确指定版本[1,6](@ref)
 langchain-community>=0.0.1  # 社区集成包[5](@ref)
 langchain-openai>=0.0.1  # OpenAI 专用接口[1](@ref)
 langchain-huggingface>=0.0.1  # HuggingFace 集成[5](@ref)
