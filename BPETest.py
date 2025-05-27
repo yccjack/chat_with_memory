@@ -22,7 +22,7 @@ class GPTDatasetV1(Dataset):
         token_ids = tokenizer.encode(txt)
         for i in range(0, len(token_ids) - max_length, stride):
             input_chunk = token_ids[i:i + max_length]
-            target_chunk = token_ids[i + 1:i + max_length + 1]
+            target_chunk = token_ids[i + stride:i + max_length + stride]
             self.input_ids.append(torch.tensor(input_chunk))
             self.target_ids.append(torch.tensor(target_chunk))
 
@@ -41,9 +41,8 @@ if __name__ == "__main__":
     file_path = "the-verdict.txt"
     with open(file_path, 'r', encoding='utf-8') as f:
         raw_txt = f.read()
-    dataloader = create_dataloader_v1(raw_txt, batch_size=1, max_length=4, stride=1, shuffle=False)
+    dataloader = create_dataloader_v1(raw_txt, batch_size=1, max_length=4, stride=4, shuffle=False)
     data_iter = iter(dataloader)
-    first_batch = next(data_iter)
-    second_batch = next(data_iter)
-    print(first_batch)
-    print(second_batch)
+    inputs, targets = next(data_iter)
+    print(inputs)
+    print(targets)
